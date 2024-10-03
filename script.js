@@ -22,6 +22,7 @@ function createGrid(size) {
       div.dataset.hoverCount = hoverCount; //update the var after increment.
 
       if (hoverCount === 1) {
+        // change to 1 since the hoverCount has already been incremented.
         div.style.backgroundColor = getRandomColor(); // colour changes on mouseover
       } else if (hoverCount < 10) {
         let brightness = 100 - hoverCount * 10; // 100 is brightest. hovercount increases, deduction from brightness increases until pixel is black.
@@ -33,4 +34,17 @@ function createGrid(size) {
   }
 }
 
-createGrid(100);
+let size;
+
+do {
+  // first do while loop yey
+  size = parseInt(prompt("Please enter a number between 16 and 100 (inclusive)"));
+
+  if (isNaN(size) || size < 16 || size > 100) {
+    alert(
+      "Invalid input! Please enter a number between 16 and 100 (inclusive)."
+    );
+  }
+} while (isNaN(size) || size < 16 || size > 100); // Keep prompting until input is valid
+
+createGrid(size);
