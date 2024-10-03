@@ -10,10 +10,15 @@ function createGrid(size) {
   container.innerHTML = "";
   const allDivs = size * size;
 
+  const pixelSize = 600 / size; // 600px is hardcoded into css. not sure if there is a better way to do this.
+
   for (let i = 0; i < allDivs; i++) {
     const div = document.createElement("div");
     div.classList.add("pixel");
     div.dataset.hoverCount = 0;
+
+    div.style.flexBasis = `${pixelSize}px`; // we get pixelSize using container size and input size to dynamically change pixels here.
+    div.style.height = `${pixelSize}px`;
 
     div.addEventListener("mouseover", function () {
       let hoverCount = parseInt(div.dataset.hoverCount) || 0;
@@ -38,7 +43,9 @@ let size;
 
 do {
   // first do while loop yey
-  size = parseInt(prompt("Please enter a number between 16 and 100 (inclusive)"));
+  size = parseInt(
+    prompt("Please enter a number between 16 and 100 (inclusive)")
+  );
 
   if (isNaN(size) || size < 16 || size > 100) {
     alert(

@@ -15,9 +15,8 @@ body {
   }
   
   .pixel {
-    flex: 1 0 calc(100% / 100);
-    width: 1%;
-    height: 1%;
+    width: 100%; /* both width and height 100 to fill size of pixel */
+    height: 100%;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
