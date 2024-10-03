@@ -39,19 +39,23 @@ function createGrid(size) {
   }
 }
 
+createGrid(16);
+
 let size;
 
-do {
-  // first do while loop yey
-  size = parseInt(
-    prompt("Please enter a number between 16 and 100 (inclusive)")
-  );
-
-  if (isNaN(size) || size < 16 || size > 100) {
-    alert(
-      "Invalid input! Please enter a number between 16 and 100 (inclusive)."
+document.querySelector("button").addEventListener("click", function () {
+  do {
+    // first do while loop yey
+    size = parseInt(
+      prompt("Please enter a number between 16 and 100 (inclusive)")
     );
-  }
-} while (isNaN(size) || size < 16 || size > 100); // Keep prompting until input is valid
 
-createGrid(size);
+    if (isNaN(size) || size < 16 || size > 100) {
+      alert(
+        "Invalid input! Please enter a number between 16 and 100 (inclusive)."
+      );
+    }
+  } while (isNaN(size) || size < 16 || size > 100); // Keep prompting until input is valid
+
+  createGrid(size);
+});
