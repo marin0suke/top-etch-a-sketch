@@ -1,0 +1,32 @@
+
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #333;
+  }
+  
+  .pixel {
+    flex: 1 0 calc(100% / 100);
+    width: 1%;
+    height: 1%;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .pixel:hover {
+    background-color: #333; 
+  }
+
+  
